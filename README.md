@@ -8,7 +8,7 @@ A standalone Python script to query Amana Smart Thermostats (and Daikin One+) fo
 It performs a single "grab" of the current data from the cloud API to help you see what your system is doing *right now*. It does **not** run continuously, it does not record history, and it does not generate graphs.
 
 ### Looking for historical graphs & trending?
-If you want to track humidity demand over time, plot furnace runtime, or visualize data history (like the charts you may have seen), this script is not enough. You need a system that polls the API 24/7 and stores the data in a database.
+If you want to track humidity demand over time, plot furnace runtime, or visualize data history, this script is not enough. You need a system that polls the API 24/7 and stores the data in a database. This data would then need to be visualized in something like Grafana.
 
 * **For Home Assistant Users:**
     We highly recommend using the full integration which handles polling, entities, and history automatically:
