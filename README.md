@@ -11,7 +11,7 @@ It performs a single "grab" of the current data from the cloud API to help you s
 If you want to track humidity demand over time, plot furnace runtime, or visualize data history, this script is not enough. You need a system that polls the API 24/7 and stores the data in a database. This data would then need to be visualized in something like Grafana.
 
 * **For Home Assistant Users:**
-    We highly recommend using the full integration which handles polling, entities, and history automatically:
+    I highly recommend using the full integration which handles polling, entities, and history automatically:
     [Daikin Skyport Integration for Home Assistant](https://github.com/apetrycki/daikinskyport)
 
 * **For Custom Solutions:**
