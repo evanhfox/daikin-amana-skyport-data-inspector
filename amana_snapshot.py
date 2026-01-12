@@ -125,4 +125,42 @@ def print_pretty_table(device_name, data):
         if raw_val != "N/A" and formatter:
             val_str = formatter(raw_val)
         else:
-            val_str = str(raw_
+            val_str = str(raw_val)
+            
+        print(f"{label:<25} | {val_str:<15}")
+    
+    # Added Footer Message
+    print("-" * 45)
+    print(" NOTE: This is a summary only.")
+    print("       For full sensor data (900+ items),")
+    print("       see the generated .json file.")
+    print("="*45 + "\n")
+
+# ==========================================
+# MAIN EXECUTION
+# ==========================================
+if __name__ == "__main__":
+    token = login()
+    
+    if token:
+        devices = get_devices(token)
+        if not devices:
+            print("[!] No devices found.")
+        else:
+            print(f"[-] Found {len(devices)} device(s). Querying data...")
+            
+            for device in devices:
+                dev_id = device.get('id')
+                dev_name = device.get('name', 'Unknown Device')
+                
+                # Get Data
+                full_data = get_device_data(token, dev_id)
+                
+                if full_data:
+                    # 1. Print the clean table
+                    print_pretty_table(dev_name, full_data)
+                    
+                    # 2. Save the full RAW dump for technical inspection
+                    save_raw_dump(dev_name, full_data)
+    
+    input("Press Enter to close...")
