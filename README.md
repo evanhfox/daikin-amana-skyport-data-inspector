@@ -33,15 +33,29 @@ The API returns over 900 data points. The on-screen table only shows the most co
 
 ## Prerequisites
 * **Python 3.x** installed on your computer.
-* No external libraries are required (uses standard `json`, `requests`, etc. included with Python).
+* The `requests` library (see setup instructions below).
+
+## Setup
+
+1.  **Create a virtual environment (recommended):**
+    ```bash
+    python3 -m venv venv
+    source venv/bin/activate  # On Windows: venv\Scripts\activate
+    ```
+
+2.  **Install dependencies:**
+    ```bash
+    pip install -r requirements.txt
+    ```
 
 ## How to Use
 
-1.  **Download the script:**
-    Download `amana_snapshot.py` to your computer.
+1.  **Activate the virtual environment (if you created one):**
+    ```bash
+    source venv/bin/activate  # On Windows: venv\Scripts\activate
+    ```
 
 2.  **Run the script:**
-    Open your terminal or command prompt and run:
     ```bash
     python amana_snapshot.py
     ```
